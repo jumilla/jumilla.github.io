@@ -1,0 +1,121 @@
+﻿<html>
+ <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/print.css" media="print" />
+    <title>Windows環境設定手順</title>
+ </head>
+ <body>
+  <header>
+    <div class="inner">
+    </div>
+  </header>
+<div id="content-wrapper">
+<div class="inner clearfix">
+<section id="main-content">
+  <h1>PHP5.5 Windows環境設定手順</h1>
+  <p>
+   <h2>1.インストールするもの</h2>
+   <div class="process">
+    <ul>
+     <li><a href="./99%20Archives/WAF-php-5.5.13-nts-Win32-VC11-x64.zip">PHP5.5</a></li>
+     <li><a href="./99%20Archives/Composer-Setup.exe">Composer</a></li>
+    </ul>
+   </div>
+  </p>
+  <p>
+   <h2>2.環境チェック(PHP)</h2>
+   <div class="process">確認項目
+    </br>・ローカル環境に、phpがインストール済みであるか？
+    </br>
+    </br>アクセサリから、コマンドプロンプトを実行して下さい。
+    </br>
+    <img src="./image/command_select-288x300.jpg" alt="command_select" width="288" height="300">
+    </br>
+    </br>コマンドプロンプト上で、「php -v」と実行して下さい。
+    </br>
+    <img src="./image/PHP_NG-300x134.jpg" alt="PHP_NG" width="300" height="134">
+    </br>このような表示がされた方は、PHPのインストールを行って下さい。
+   </div>
+  </p>
+  <p>
+   <h2>3.php5.5のインストール</h2>
+   <div class="process">
+    <ol>
+     <li>
+      <a href="./99%20Archives/WAF-php-5.5.13-nts-Win32-VC11-x64.zip">PHPインストール用zipファイル</a>をデスクトップにコピーして、zipファイルを展開して下さい。<br>
+      <span style="color: red; font-weight: bold; font-size: 80%">※Apacheのモジュールとして使う場合は、<a href="./99%20Archives/WAF-php-5.5.13-Win32-VC11-x64.zip">スレッドセーフ版</a>をインストールしてください。</span>
+     </li>
+     <li>展開されたフォルダを、Cドライブ直下にコピーして、名前を「PHP55」にリネームして下さい。(C:\PHP55)</li>
+    </ol>その後、以下の手順にて、環境変数の設定をして下さい。
+    </br>
+    </br>コントロールパネルから、システムの詳細設定をクリックして下さい。
+    </br>
+    <img src="./image/system_setting-300x135.jpg" alt="system_setting" width="300" height="135">
+    </br>
+    </br>詳細設定タブから、環境変数をクリックして下さい。
+    </br>
+    <img src="./image/system_PATH_setting-300x291.jpg" alt="system_PATH_setting" width="300" height="291">
+    </br>
+    </br>システム環境変数から、「Path」を選択して「編集」をクリックして下さい。
+    </br>
+    <img src="./image/PATH_select-300x289.jpg" alt="PATH_select" width="300" height="289">
+    </br>
+    </br>変数値の末尾に、「;C:\PHP55」を追記して下さい。
+    </br>
+    <img src="./image/PATH_setting-300x113.jpg" alt="PATH_setting" width="300" height="113">
+    </br>
+    </br>設定後、コマンドプロンプトを開き直し、「php -v」を実行して下さい。
+    </br>
+    <img src="./image/PHP_OK-300x121.jpg" alt="PHP_OK" width="300" height="121">
+    </br>php5.4以上がインストールされていれば、OKです。
+   </div>
+  </p>
+  <p>
+   <h2>4.環境チェック(composer)</h2>
+   <div class="process">確認項目
+    </br>・ローカル環境に、composerがインストールされているか？
+    </br>
+    </br>コマンドプロンプト上で、「composer」を実行して下さい。
+    </br>
+    <img src="./image/composer_ng-300x95.jpg" alt="composer_ng" width="300" height="95">
+    </br>このような表示がされた方は、composerのインストールを行って下さい。
+   </div>
+  </p>
+  <p>
+   <h2>5.composerのインストール</h2>
+   <div class="process">
+    <ol>
+     <li>
+      <a href="./99%20Archives/Composer-Setup.exe">Composerインストール用ファイル</a>をローカルに保存し、実行して下さい。
+      </br>※全て、デフォルトのまま進めてOKです。
+     </li>
+    </ol>
+    <img src="./image/composer_install1-300x243.jpg" alt="composer_install1" width="300" height="243">
+    </br>
+    </br>
+    <img src="./image/composer_install2-300x243.jpg" alt="composer_install2" width="300" height="243">
+    </br>
+    </br>
+    <img src="./image/composer_install3-300x243.jpg" alt="composer_install3" width="300" height="243">
+    </br>
+    </br>
+    <img src="./image/composer_install4-300x243.jpg" alt="composer_install4" width="300" height="243">
+    </br>
+    </br>
+    <img src="./image/composer_install5-300x243.jpg" alt="composer_install5" width="300" height="243">
+    </br>
+    </br>設定後、コマンドプロンプトを開き直し、「composer」を実行して、以下の表示がされるとOKです。
+    </br>
+    <img src="./image/composer_ok-300x132.jpg" alt="composer_ok" width="300" height="132">
+   </div>
+  </p>
+</section>
+</div>
+</div>
+ </body>
+</html>
